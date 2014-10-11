@@ -1,0 +1,32 @@
+2014-10-11 at 23:30:25 CST TRACE com.ycbike.core.log.TestLog 12 hello - entry
+2014-10-11 at 23:30:25 CST ERROR com.ycbike.core.log.TestLog 13 hello - Did it again!
+2014-10-11 at 23:30:25 CST INFO  com.ycbike.core.log.TestLog 14 hello - 我是info信息
+2014-10-11 at 23:30:25 CST DEBUG com.ycbike.core.log.TestLog 15 hello - 我是debug信息
+2014-10-11 at 23:30:25 CST WARN  com.ycbike.core.log.TestLog 16 hello - 我是warn信息
+2014-10-11 at 23:30:25 CST FATAL com.ycbike.core.log.TestLog 17 hello - 我是fatal信息
+2014-10-11 at 23:30:25 CST DEBUG com.ycbike.core.log.TestLog 18 hello - 我是debug信息
+2014-10-11 at 23:30:25 CST TRACE com.ycbike.core.log.TestLog 19 hello - exit
+2014-10-11 at 23:31:40 CST TRACE com.ycbike.core.log.TestLog 12 hello - entry
+2014-10-11 at 23:31:40 CST ERROR com.ycbike.core.log.TestLog 13 hello - Did it again!
+2014-10-11 at 23:31:40 CST INFO  com.ycbike.core.log.TestLog 14 hello - this's info message
+2014-10-11 at 23:31:40 CST DEBUG com.ycbike.core.log.TestLog 15 hello - This's debug message
+2014-10-11 at 23:31:40 CST WARN  com.ycbike.core.log.TestLog 16 hello - This's warn message
+2014-10-11 at 23:31:40 CST FATAL com.ycbike.core.log.TestLog 17 hello - This's fatal message
+2014-10-11 at 23:31:40 CST DEBUG com.ycbike.core.log.TestLog 18 hello - This's debug message
+2014-10-11 at 23:31:40 CST TRACE com.ycbike.core.log.TestLog 19 hello - exit
+2014-10-11 at 23:37:04 CST TRACE com.ycbike.core.log.TestLog 12 hello - entry
+2014-10-11 at 23:37:04 CST ERROR com.ycbike.core.log.TestLog 13 hello - Did it again!
+2014-10-11 at 23:37:04 CST INFO  com.ycbike.core.log.TestLog 14 hello - this's info message
+2014-10-11 at 23:37:04 CST DEBUG com.ycbike.core.log.TestLog 15 hello - This's debug message
+2014-10-11 at 23:37:04 CST WARN  com.ycbike.core.log.TestLog 16 hello - This's warn message
+2014-10-11 at 23:37:04 CST FATAL com.ycbike.core.log.TestLog 17 hello - This's fatal message
+2014-10-11 at 23:37:04 CST DEBUG com.ycbike.core.log.TestLog 18 hello - This's debug message
+2014-10-11 at 23:37:04 CST TRACE com.ycbike.core.log.TestLog 19 hello - exit
+2014-10-11 at 23:39:55 CST TRACE com.ycbike.core.log.TestLog 12 hello - entry
+2014-10-11 at 23:39:55 CST ERROR com.ycbike.core.log.TestLog 13 hello - Did it again!
+2014-10-11 at 23:39:55 CST INFO  com.ycbike.core.log.TestLog 14 hello - this's info message
+2014-10-11 at 23:39:55 CST DEBUG com.ycbike.core.log.TestLog 15 hello - This's debug message
+2014-10-11 at 23:39:55 CST WARN  com.ycbike.core.log.TestLog 16 hello - This's warn message
+2014-10-11 at 23:39:55 CST FATAL com.ycbike.core.log.TestLog 17 hello - This's fatal message
+2014-10-11 at 23:39:55 CST DEBUG com.ycbike.core.log.TestLog 18 hello - This's debug message
+2014-10-11 at 23:39:55 CST TRACE com.ycbike.core.log.TestLog 19 hello - exit
