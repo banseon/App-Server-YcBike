@@ -1,0 +1,37 @@
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!-- 配置数据库配置文件 -->
+    <!-- 
+    <properties resource="database.properties" />
+     -->
+	<!-- 配置所有实体类型 -->
+	<typeAliases>
+		<typeAlias type="com.ycbike.core.model.YcBikeUserLogin" alias="YcBikeUserLogin"/>
+	</typeAliases>
+	
+	<!-- 
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	 -->
+	
+	
+	<!-- 配置实体类型映射 -->
+	<mappers>
+	    <!-- sqlmappers config -->	
+	    <mapper resource="com.ycbike.core.model.YcBikeUserLogin.xml"/>
+	</mappers>
+    
+    
+</configuration>

@@ -1,0 +1,31 @@
+<!DOCTYPE  html>
+<html>
+ <head>
+  <title>YCBIKE UI </title>
+  <meta charset="utf-8" />
+  <meta name="Generator" content="18391933@qq.com"/>
+  <meta name="Author" content="banseon"/>
+  <meta name="Keywords" content=""/>
+  <meta name="Description" content=""/>
+	<link rel="stylesheet" type="text/css" href="jseasyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="jseasyui/themes/icon.css">
+	<script type="text/javascript" src="jseasyui/jquery.min.js"></script>
+	<script type="text/javascript" src="jseasyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="jseasyui/easyloader.js"></script>
+	<script type="text/javascript" src="jseasyui/locale/easyui-lang-zh_CN.js"></script>
+ </head>
+
+ <body>
+		<div id="box" class="easyui-dialog" title="标题" style="width:800px;height:300px;">
+				内容部分。。。。
+		</div>
+		<hr/>
+		<div id="box2">第二个盒子</div>
+		<script language="javascript">
+			easyloader.load('dialog',function() {
+				$('#box2').attr({'width':300,'height':300})
+								.dialog();
+			});
+		</script>
+ </body>
+</html>
