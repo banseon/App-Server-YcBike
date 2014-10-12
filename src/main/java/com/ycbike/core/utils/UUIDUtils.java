@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.locks.ReentrantLock;
 
-/**
+/** 
  * Helper for creating random and Type 1 (time-based) UUIDs.
  *
  * @author Jon Brisbin

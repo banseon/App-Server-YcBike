@@ -24,5 +24,5 @@ public interface YcBikeUserLoginDao {
 	public void deleteById(int uuid);
 	
 	public void deleleByBean(YcBikeUserLogin...bikeUserLogins);
-	
+	 
 }

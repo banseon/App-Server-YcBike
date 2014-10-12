@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.ycbike.core.domain.Identifiable;
-
+ 
 public interface BaseService<T extends Identifiable>  {
 
 	/**

@@ -13,7 +13,7 @@ import com.ycbike.core.domain.Identifiable;
  */
 public interface BaseDAO<T extends Identifiable> {
 	
-	/**
+	/** 
 	 * 查询一个对象，如果返回的结果多于一个对象将会抛出TooManyResultsException
 	 * @param obj 查询对象，不能为null
 	 * @return Mapper中映射的对象，继承自 T对象，一般是Vo对象

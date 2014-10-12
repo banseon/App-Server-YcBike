@@ -1,7 +1,7 @@
 package com.ycbike.core.exception;
 
 public class ServiceException extends RuntimeException {
-
+ 
 	private static final long serialVersionUID = -360277845666981697L;
 
 	public ServiceException() {

@@ -5,7 +5,7 @@ import java.io.Serializable;
 public interface Identifiable extends Serializable {
 
 	/**
-	 * 获取主键
+	 * 获取主键 
 	 * @return  返回组件值
 	 */
 	public String getId();

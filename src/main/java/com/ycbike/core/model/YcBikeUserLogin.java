@@ -1,5 +1,5 @@
 package com.ycbike.core.model;
-
+ 
 import java.sql.Date;
 
 public class YcBikeUserLogin {

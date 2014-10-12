@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 <configuration>
     <!-- 配置数据库配置文件 -->
-    <!-- 
+    <!--  
     <properties resource="database.properties" />
      -->
 	<!-- 配置所有实体类型 -->

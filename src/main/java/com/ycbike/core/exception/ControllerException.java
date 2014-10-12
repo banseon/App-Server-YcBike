@@ -3,7 +3,7 @@ package com.ycbike.core.exception;
 
 public class ControllerException extends RuntimeException {
 
-	/**
+	/** 
 	 * @fields serialVersionUID 
 	 */
 	private static final long serialVersionUID = 4081863331832266720L;

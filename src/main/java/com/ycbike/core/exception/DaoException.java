@@ -3,7 +3,7 @@ package com.ycbike.core.exception;
 
 public class DaoException extends RuntimeException {
 
-	/**
+	/** 
 	 * @fields serialVersionUID 
 	 */
 	private static final long serialVersionUID = 8350049272861703406L;

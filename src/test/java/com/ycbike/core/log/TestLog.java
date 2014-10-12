@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 public class TestLog {
 
 	static Logger logger = LogManager.getLogger(TestLog.class.getName());
-
+ 
     public boolean hello() {
         logger.entry();   //trace级别的 message，单独列出来是希望你在某个方法或者程序逻辑开始的时候调用，和logger.trace("entry")基本一个意思
         logger.error("Did it again!");   //error级别的 message，参数就是你输出的 message

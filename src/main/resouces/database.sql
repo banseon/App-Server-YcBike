@@ -6,7 +6,7 @@ CREATE TABLE `YCBIKE_USER_LOGIN`
 	`uuid` 				INT NOT NULL 
 						AOTU_INCREMENT 
 						PRIMARY KEY,
-						
+						 
 	`iphone` 			VARCHAR(11) 
 						NOT NULL 
 			 			CHECK(LEN(IPHONE)=11) 

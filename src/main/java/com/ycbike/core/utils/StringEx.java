@@ -1,6 +1,6 @@
 package com.ycbike.core.utils;
 
-/**
+/** 
  * @Description: 字符串处理工具类
  * @author: jiangbin
  * @date: 2011-6-6上午10:28:09
