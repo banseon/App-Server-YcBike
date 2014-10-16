@@ -27,7 +27,7 @@ public class YcBikeUserLoginDao extends BaseDaoImpl<YcBikeUserLogin> implements 
 			logger.info("begin invoke select method .");
 			List list = dao.selectAll();
 			logger.info("end invoke select method .");
-			logger.debug("select method result: "+list);
+			logger.debug("select method result: "+list.size());
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}

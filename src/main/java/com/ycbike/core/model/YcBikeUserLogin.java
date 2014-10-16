@@ -7,17 +7,17 @@ import com.ycbike.core.domain.Identifiable;
 public class YcBikeUserLogin implements Identifiable{
 	
 	private String id;
-	private int phone;
+	private String phone;
 	private String name;
 	private String password;
-	private Date createTime;
+	private String createTime;
 	private int flag;
 	
 	
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	public String getName() {
@@ -32,10 +32,10 @@ public class YcBikeUserLogin implements Identifiable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Date getCreateTime() {
+	public String getCreateTime() {
 		return createTime;
 	}
-	public void setCreateTime(Date createTime) {
+	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
 	}
 	public int getFlag() {
