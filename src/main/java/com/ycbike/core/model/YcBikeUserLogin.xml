@@ -3,11 +3,11 @@
 PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
 "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
-<mapper namespace="UserLoginMapper">
+<mapper namespace="com.ycbike.core.model.YcBikeUserLogin">
      
     <!-- pojo对象与数据库表中列明对应 -->
-    <resultMap type="YcBikeUserLogin" id="UserLoginMap">
-        <id property="uuid" column="uuid"/>
+    <resultMap id="ycBikeUserLoginMap"  type="com.ycbike.core.model.YcBikeUserLogin">
+        <id property="id" column="uuid"/>
         <result property="phone" column="phone"/>
         <result property="name" column="name"/>
         <result property="password" column="password"/>
@@ -15,8 +15,97 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
         <result property="flag" column="flag"/>
     </resultMap>
     
-    <select id="findById" parameterType="java.lang.Integer" resultType="YcBikeUserLogin">
-		SELECT * FROM ycbike_user_login WHERE uuid = #{id}
+    <sql id="Base_Column_list">
+        	uuid as uuid,
+        	phone as phone,
+        	name as name,
+        	password as password,
+        	createTime as createTime,
+        	flag as flag
+    </sql>
+    
+    <sql id="Base_where_Clause">
+        <where>
+            <trim prefixOverrides="and">
+                <if test="id != null"> and uuid = #{id}</if>
+                <if test="phone != null"> and phone = #{phone}</if>
+                <if test="name != null"> and name = #{name}</if>
+                <if test="password != null"> and password = #{password}</if>
+                <if test="createTime != null"> and createTime = #{createTime}</if>
+                <if test="flag != null"> and flag = #{flag}</if>
+            </trim>
+        </where>
+         <if test="sorting != null">order by ${sorting}</if>  
+	     <if test="offset != null and limit != null">  
+	          limit #{offset}, #{limit}  
+	     </if>  
+    </sql>
+    
+    <select id="findById" parameterType="java.lang.Integer" resultType="ycBikeUserLoginMap">
+		SELECT * FROM 
+			ycbike_user_login 
+		WHERE 
+			uuid = #{id}
 	</select>
     
+    <select id="selectAll"  resultType="ycBikeUserLoginMap">
+		SELECT * FROM  ycbike_user_login 
+	</select>
+    
+    
+    <!-- 根据ID删除 -->  
+    <delete id="deleteById" parameterType="java.lang.String">  
+        DELETE FROM 
+        	ycbike_user_login  
+        WHERE 
+        	uuid = #{uuid}  
+    </delete>  
+      
+    <!-- 删除 -->  
+    <delete id="delete" parameterType="java.util.Map">  
+        DELETE FROM ycbike_user_login  
+        <include refid="Base_Where_Clause" />  
+    </delete>  
+    
+    <!-- 增加数据 -->
+    <insert id="insert" parameterType="com.ycbike.core.model.YcBikeUserLogin">
+       INSERT INTO ycbike_user_login
+       (
+			<include refid="Base_Column_list"/>
+		)
+       VALUES
+       (
+       		<if test="uuid != null">  uuid = #{uuid},</if>
+       		phone = #{phone}, 
+	        name = #{name},  
+	        password = #{password},  
+	        createTime = #{createTime},
+	        flag = #{flag}  
+       )
+    </insert>
+    
+    <!-- 通过ID更新 -->  
+    <update id="updateByIdSelective" parameterType="com.ycbike.core.model.YcBikeUserLogin">  
+        update ycbike_user_login  
+        <set>  
+            <if test="phone != null">  phone = #{phone},</if>
+            <if test="name != null">  name = #{name},</if>
+            <if test="password != null">  password = #{password},</if>
+            <if test="createTime != null">  createTime = #{createTime},</if>
+            <if test="flag != null">  flag = #{flag}</if>
+        </set>  
+        where uuid = #{uuid}  
+    </update>  
+    
+    <update id="updateById" parameterType="com.ycbike.core.model.YcBikeUserLogin">  
+        update ycbike_user_login  
+        set 
+	        phone = #{phone}, 
+	        name = #{name},  
+	        password = #{password},  
+	        createTime = #{createTime},
+	        flag = #{flag}  
+	    where 
+	        uuid = #{uuid}  
+    </update>
 </mapper>

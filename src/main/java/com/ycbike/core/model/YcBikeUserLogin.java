@@ -2,9 +2,11 @@ package com.ycbike.core.model;
  
 import java.sql.Date;
 
-public class YcBikeUserLogin {
+import com.ycbike.core.domain.Identifiable;
+
+public class YcBikeUserLogin implements Identifiable{
 	
-	private int uuid;
+	private String id;
 	private int phone;
 	private String name;
 	private String password;
@@ -12,12 +14,6 @@ public class YcBikeUserLogin {
 	private int flag;
 	
 	
-	public int getUuid() {
-		return uuid;
-	}
-	public void setUuid(int uuid) {
-		this.uuid = uuid;
-	}
 	public int getPhone() {
 		return phone;
 	}
@@ -48,10 +44,14 @@ public class YcBikeUserLogin {
 	public void setFlag(int flag) {
 		this.flag = flag;
 	}
-	
-	
-	
-	
-	
+	@Override
+	public String getId() {
+		// TODO Auto-generated method stub
+		return id;
+	}
+	@Override
+	public void setId(String id) {
+		this.id = id;
+	}
 
 }

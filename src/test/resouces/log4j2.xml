@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<configuration status="error">
+ 
+<configuration status="OFF">
     <!--先定义所有的appender-->
     <appenders> 
         <!--这个输出控制台的配置-->
@@ -11,10 +11,9 @@
             <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
         </Console>
         <!--文件会打印出所有信息，这个log每次运行程序会自动清空，由append属性决定，这个也挺有用的，适合临时测试用-->
-        <File name="log" fileName="logs/test.log" append="false">
+        <File name="mybatis-log" fileName="logs/test.log" append="false">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
         </File>
-
         <!--这个会打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
         <RollingFile name="RollingFile" fileName="logs/app.log"
                      filePattern="log/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
@@ -24,11 +23,15 @@
     </appenders>
     <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效-->
     <loggers>
+        <!--  若是我们想去掉除com.foo.Bar以外所有的trace输出
+         <Logger name="com.ycbike" level="trace" additivity="false">
+			<AppenderRef ref="Console"/>
+		</Logger>
+		-->
         <!--建立一个默认的root的logger-->
         <root level="trace">
-            <appender-ref ref="RollingFile"/>
+            <!--  appender-ref ref="RollingFile"/>  -->
             <appender-ref ref="Console"/>
         </root>
-
     </loggers>
 </configuration>

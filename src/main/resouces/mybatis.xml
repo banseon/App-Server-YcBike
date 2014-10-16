@@ -7,10 +7,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     <!--  
     <properties resource="database.properties" />
      -->
-	<!-- 配置所有实体类型 -->
+	<!-- 配置所有实体类型
 	<typeAliases>
 		<typeAlias type="com.ycbike.core.model.YcBikeUserLogin" alias="YcBikeUserLogin"/>
 	</typeAliases>
+	 -->
+	
 	
 	<!-- 
 	<environments default="development">
@@ -27,11 +29,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	 -->
 	
 	
-	<!-- 配置实体类型映射 -->
-	<mappers>
-	    <!-- sqlmappers config -->	
+	<!-- 配置实体类型映射
+	<mappers>						
+
 	    <mapper resource="com.ycbike.core.model.YcBikeUserLogin.xml"/>
 	</mappers>
-    
+    -->
     
 </configuration>

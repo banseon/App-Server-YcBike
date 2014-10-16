@@ -11,7 +11,7 @@ import com.ycbike.core.domain.Identifiable;
  * @author Banseon
  * @date
  */
-public interface BaseDAO<T extends Identifiable> {
+public interface BaseDao<T extends Identifiable> {
 	
 	/** 
 	 * 查询一个对象，如果返回的结果多于一个对象将会抛出TooManyResultsException
