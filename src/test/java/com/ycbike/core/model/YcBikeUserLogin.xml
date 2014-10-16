@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.ycbike.core.model.YcBikeUserLogin">
+     
+    <!-- pojo对象与数据库表中列明对应 -->
+    <resultMap id="ycBikeUserLoginMap"  type="com.ycbike.core.model.YcBikeUserLogin">
+        <id property="id" column="uuid"/>
+        <result property="phone" column="phone"/>
+        <result property="name" column="name"/>
+        <result property="password" column="password"/>
+        <result property="createTime" column="createTime"/>
+        <result property="flag" column="flag"/>
+    </resultMap>
+       
+    <select id="selectById" parameterType="java.lang.Integer" resultMap="ycBikeUserLoginMap">
+		SELECT * FROM 
+			ycbike_user_login 
+		WHERE 
+			uuid = #{id}
+	</select>
+    
+    <select id="select"  resultMap="ycBikeUserLoginMap">
+		SELECT * FROM  ycbike_user_login 
+	</select>
+    
+   
+</mapper>
