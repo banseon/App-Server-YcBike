@@ -25,11 +25,7 @@ public abstract class BaseDaoImpl<T extends Identifiable> implements BaseDao<T> 
 	
 	@Autowired(required = true)
 	protected SqlSessionTemplate sqlSessionTemplate;
-	
-	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {  
-        this.sqlSessionTemplate = sqlSessionTemplate;  
-   }  
-		
+ 
 	public static final String SQLNAME_SEPARATOR = ".";
 
 	/**
@@ -225,8 +221,8 @@ public abstract class BaseDaoImpl<T extends Identifiable> implements BaseDao<T> 
 	public void insert(T entity) {
 		Assert.notNull(entity);
 		try {
-			if (StringUtils.isBlank(entity.getId()))
-				entity.setId(generateId());
+			if (StringUtils.isBlank(entity.getUuid()))
+				entity.setUuid(generateId());
 			sqlSessionTemplate.insert(getSqlName(ConstantsSQL.SQL_INSERT), entity);
 		} catch (Exception e) {
 			throw new DaoException(String.format("添加对象出错！语句：%s", getSqlName(ConstantsSQL.SQL_INSERT)), e);

@@ -3,10 +3,10 @@
 PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
 "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
-<mapper namespace="com.ycbike.core.model.YcBikeUserLogin">
+<mapper namespace="com.ycbike.web.domain.YcBikeUserLogin">
      
     <!-- pojo对象与数据库表中列明对应 -->
-    <resultMap id="ycBikeUserLoginMap"  type="com.ycbike.core.model.YcBikeUserLogin">
+    <resultMap id="ycBikeUserLoginMap"  type="com.ycbike.web.domain.YcBikeUserLogin">
         <id property="id" column="uuid"/>
         <result property="phone" column="phone" javaType="String"/>
         <result property="name" column="name" javaType="String"/>
@@ -72,7 +72,7 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
     </delete>  
     
     <!-- 增加数据 -->
-    <insert id="insert" parameterType="com.ycbike.core.model.YcBikeUserLogin">
+    <insert id="insert" parameterType="com.ycbike.web.domain.YcBikeUserLogin">
        INSERT INTO ycbike_user_login
        (
 			<include refid="Base_Column_list"/>
@@ -89,7 +89,7 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
     </insert>
     
     <!-- 通过ID更新 -->  
-    <update id="updateByIdSelective" parameterType="com.ycbike.core.model.YcBikeUserLogin">  
+    <update id="updateByIdSelective" parameterType="com.ycbike.web.domain.YcBikeUserLogin">  
         update ycbike_user_login  
         <set>  
             <if test="phone != null">  phone = #{phone},</if>
@@ -101,7 +101,7 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
         where uuid = #{uuid}  
     </update>  
     
-    <update id="updateById" parameterType="com.ycbike.core.model.YcBikeUserLogin">  
+    <update id="updateById" parameterType="com.ycbike.web.domain.YcBikeUserLogin">  
         update ycbike_user_login  
         set 
 	        phone = #{phone}, 

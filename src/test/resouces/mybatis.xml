@@ -9,7 +9,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
      -->
 	<!-- 配置所有实体类型 -->
 	<typeAliases>
-		<typeAlias type="com.ycbike.core.model.YcBikeUserLogin" alias="YcBikeUserLogin"/>
+		<typeAlias type="com.ycbike.web.domain.YcBikeUserLogin" alias="YcBikeUserLogin"/>
+		<typeAlias type="com.ycbike.web.domain.YcBikeCircle" alias="YcBikeCircle"/>
+		<typeAlias type="com.ycbike.web.domain.YcBikeCircleUser" alias="YcBikeCircleUser"/>
+		<typeAlias type="com.ycbike.web.domain.YcBikeRoute" alias="YcBikeRoute"/>
+		<typeAlias type="com.ycbike.web.domain.YcBikeRouteNode" alias="YcBikeRouteNode"/>
+		<typeAlias type="com.ycbike.web.domain.YcBikeUserInfo" alias="YcBikeUserInfo"/>
 	</typeAliases>
 	
 	<!-- 
