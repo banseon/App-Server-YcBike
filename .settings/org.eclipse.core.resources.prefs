@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/ycbike/web/dao/IYcBikeCircleDao.java=UTF-8
+encoding//src/main/java/com/ycbike/web/dao/IYcBikeCircleUserDao.java=UTF-8
+encoding//src/main/java/com/ycbike/web/dao/IYcBikeRouteDao.java=UTF-8
+encoding//src/main/java/com/ycbike/web/dao/IYcBikeRouteNodeDao.java=UTF-8
+encoding//src/main/java/com/ycbike/web/dao/IYcBikeUserInfoDao.java=UTF-8
+encoding//src/main/java/com/ycbike/web/dao/IYcBikeUserLoginDao.java=UTF-8
+encoding//src/main/java/com/ycbike/web/dao/YcBikeUserLoginDao.java=UTF-8

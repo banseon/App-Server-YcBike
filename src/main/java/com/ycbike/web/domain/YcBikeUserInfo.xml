@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.ycbike.web.domain.YcBikeUserInfo">
+     
+    <!-- pojo对象与数据库表中列明对应 -->
+    <resultMap id="ycBikeUserInfoMap"  type="com.ycbike.web.domain.YcBikeUserInfo">
+        <id property="uuid" column="uuid" javaType="String"/>
+        <result property="image" column="image" javaType="String"/>
+        <result property="name" column="name" javaType="String"/>
+        <result property="sex" column="sex" javaType="Integer"/>
+        <result property="bike_beginTime" column="bike_beginTime" javaType="String"/>
+        <result property="qq" column="qq" javaType="String"/>
+        <result property="email" column="email" javaType="String"/>
+        <result property="http" column="http" javaType="String"/>
+    </resultMap>
+ 
+    <sql id="Base_Column_list">
+        	uuid as uuid,
+        	iamge as image,
+        	name as name,
+        	sex as sex,
+        	age as age,
+        	bike_beginTime as bike_beginTime,
+        	qq as qq,
+        	email as email,
+        	http as http
+    </sql>
+    
+    <sql id="Base_where_Clause">
+        <where>
+            <trim prefixOverrides="and">
+                <if test="uuid != null"> uuid = #{id}</if>
+                <if test="image != null"> and image = #{image}</if>
+                <if test="name != null"> and name = #{name}</if>
+                <if test="sex != null"> and sex = #{sex}</if>
+                <if test="age != null"> and age = #{age}</if>
+                <if test="beginTime != null"> and bike_beginTime = #{beginTime}</if>
+                <if test="qq != null"> and qq = #{qq}</if>
+                <if test="email != null"> and email = #{email}</if>
+                <if test="http != null"> and http = #{http}</if>
+            </trim>
+        </where>
+         <if test="sorting != null">order by ${sorting}</if>  
+	     <if test="offset != null and limit != null">  
+	          limit #{offset}, #{limit}  
+	     </if>  
+    </sql>
+    
+    <select id="findById" parameterType="java.lang.String" resultType="YcBikeUserInfo">
+		SELECT * FROM 
+			ycbike_user_info 
+		WHERE 
+			uuid = #{id}
+	</select>
+    
+    <select id="selectAll"  resultMap="ycBikeUserInfoMap">
+		SELECT
+		 <include refid="Base_Column_list"/>
+		FROM  ycbike_user_info 
+	</select>
+	
+    <select id="select"  resultMap="ycBikeUserInfoMap">
+		SELECT * FROM  ycbike_user_info 
+	</select>
+    
+  
+    <!-- 根据ID删除 -->  
+    <delete id="deleteById" parameterType="java.lang.String">  
+        DELETE FROM 
+        	ycbike_user_info  
+        WHERE 
+        	uuid = #{uuid}  
+    </delete>  
+      
+    <!-- 删除 -->  
+    <delete id="delete" parameterType="java.util.Map">  
+        DELETE FROM ycbike_user_info  
+    </delete>  
+    
+    <!-- 增加数据 -->
+    <insert id="insert" parameterType="com.ycbike.web.domain.YcBikeUserInfo">
+       INSERT INTO ycbike_user_info
+       (
+			<include refid="Base_Column_list"/>
+		)
+       VALUES
+       (
+       		#{uuid},
+       		#{image}, 
+	        #{name},  
+	        #{sex},  
+	        #{age},
+	        #{beginTime},
+	        #{qq},
+	        #{email},
+	        #{http}
+       )
+    </insert>
+    
+    <!-- 通过ID更新 -->  
+    <update id="updateByIdSelective" parameterType="com.ycbike.web.domain.YcBikeUserInfo">  
+        update ycbike_user_info  
+        <set>  
+            <if test="phone != null">  phone = #{phone},</if>
+            <if test="name != null">  name = #{name},</if>
+            <if test="password != null">  password = #{password},</if>
+            <if test="createTime != null">  createTime = #{createTime},</if>
+            <if test="flag != null">  flag = #{flag}</if>
+        </set>  
+        where uuid = #{uuid}  
+    </update>  
+    
+    <update id="updateById" parameterType="com.ycbike.web.domain.YcBikeUserInfo">  
+        update ycbike_user_info  
+        set 
+	        phone = #{phone}, 
+	        name = #{name},  
+	        password = #{password},  
+	        createTime = #{createTime},
+	        flag = #{flag}  
+	    where 
+	        uuid = #{uuid}  
+    </update>
+  
+</mapper>

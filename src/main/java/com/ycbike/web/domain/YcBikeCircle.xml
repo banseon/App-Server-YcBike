@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.ycbike.web.domain.YcBikeCircle">
+     
+    <!-- pojo对象与数据库表中列明对应 -->
+    <resultMap id="ycBikeCircleMap"  type="com.ycbike.web.domain.YcBikeCircle">
+        <id property="uuid" column="uuid" javaType="String"/>
+        <result property="circleName" column="circleName" javaType="String"/>
+        <result property="circleDesc" column="circleDesc" javaType="String"/>
+        <result property="flag" column="flag" javaType="Integer"/>
+        <result property="adminId" column="adminId" javaType="String"/>
+        <result property="superAdminId" column="superAdminId" javaType="String"/>
+    </resultMap>
+ 
+    <sql id="Base_Column_list">
+        	uuid as uuid,
+        	circleName as circleName,
+        	circleDesc as circleDesc,
+        	flag as flag,
+        	adminId as adminId,
+        	superAdminId as superAdminId
+    </sql>
+    
+    <sql id="Base_where_Clause">
+        <where>
+            <trim prefixOverrides="and">
+                <if test="uuid != null"> uuid = #{id}</if>
+                <if test="circleName != null"> and circleName = #{circleName}</if>
+                <if test="circleDesc != null"> and circleDesc = #{circleDesc}</if>
+                <if test="flag != null"> and flag = #{flag}</if>
+                <if test="adminId != null"> and adminId = #{adminId}</if>
+                <if test="superAdminId != null"> and superAdminId = #{superAdminId}</if>
+            </trim>
+        </where>
+         <if test="sorting != null">order by ${sorting}</if>  
+	     <if test="offset != null and limit != null">  
+	          limit #{offset}, #{limit}  
+	     </if>  
+    </sql>
+    
+    <select id="findById" parameterType="java.lang.String" resultType="YcBikeCircle">
+		SELECT * FROM 
+			ycbike_circle 
+		WHERE 
+			uuid = #{id}
+	</select>
+    
+    <select id="selectAll"  resultMap="ycBikeCircleMap">
+		SELECT
+		 <include refid="Base_Column_list"/>
+		FROM  ycbike_circle 
+	</select>
+	
+    <select id="select"  resultMap="ycBikeCircleMap">
+		SELECT * FROM  ycbike_circle 
+	</select>
+    
+  
+    <!-- 根据ID删除 -->  
+    <delete id="deleteById" parameterType="java.lang.String">  
+        DELETE FROM 
+        	ycbike_circle  
+        WHERE 
+        	uuid = #{uuid}  
+    </delete>  
+      
+    <!-- 删除 -->  
+    <delete id="delete" parameterType="java.util.Map">  
+        DELETE FROM ycbike_circle  
+    </delete>  
+    
+    <!-- 增加数据 -->
+    <insert id="insert" parameterType="com.ycbike.web.domain.YcBikeCircle">
+       INSERT INTO ycbike_circle
+       (
+			<include refid="Base_Column_list"/>
+		)
+       VALUES
+       (
+       		#{uuid},
+       		#{circleName}, 
+	        #{circleDesc},  
+	        #{flag},  
+	        #{adminId},
+	        #{superAdminId}
+       )
+    </insert>
+    
+    <!-- 通过ID更新 -->  
+    <update id="updateByIdSelective" parameterType="com.ycbike.web.domain.YcBikeCircle">  
+        update ycbike_circle  
+        <set>  
+            <if test="circleName != null">  circleName = #{circleName},</if>
+            <if test="circleDesc != null">  circleDesc = #{circleDesc},</if>
+            <if test="flag != null">  flag = #{flag},</if>
+            <if test="adminId != null">  adminId = #{adminId},</if>
+            <if test="superAdminId != null">  superAdminId = #{superAdminId}</if>
+        </set>  
+        where uuid = #{uuid}  
+    </update>  
+    
+    <update id="updateById" parameterType="com.ycbike.web.domain.YcBikeCircle">  
+        update ycbike_circle  
+        set 
+	        circleName = #{circleName}, 
+	        circleDesc = #{circleDesc},  
+	        flag = #{flag},  
+	        adminId = #{adminId},
+	        superAdminId = #{superAdminId}  
+	    where 
+	        uuid = #{uuid}  
+    </update>
+  
+</mapper>

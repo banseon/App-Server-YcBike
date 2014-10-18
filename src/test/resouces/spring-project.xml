@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+	http://www.springframework.org/schema/jdbc 
+	http://www.springframework.org/schema/jdbc/spring-jdbc-4.1.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+	
+    <!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口
+    	basePackage指定要扫描的包，在此包之下的映射器都会被搜索到。可指定多个包，包与包之间用逗号或分号分隔
+     -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+        <property name="basePackage" value="com.ycbike.web.dao" />
+        <!--  property name="annotationClass" value="com.ycbike.web.dao" /> -->
+    </bean>
+    
+    
+    <!-- 用户登录部分配置  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+    
+    
+    
+    <!-- 数据访问DAO，在DAO中使用SqlSession来查数据，  
+                 由于在中只有sqlSessionTemplate的setter方法（没有sqlSession的setter方法），  
+                 故属性名必须为sqlSessionTemplate 
+    <bean id="YcBikeUserLoginDao" class="com.ycbike.web.dao.YcBikeUserLoginDao">
+		<property name="sqlSessionTemplate" ref="sqlSession" />        
+    </bean>
+    -->  
+    
+    </beans>
